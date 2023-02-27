@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
-  root to: "pages#home"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  devise_for :users
+  resources :drones, only: [:index, :show] do
+    resources :bookings, only: [:new, :create]
+  end
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :bookings, only: [:index, :show, :destroy]
+  namespace :admin do
+    resources :bookings, only: [:index, :show]
+    post 'bookings/:id/accept', to: 'bookings#accept', as: :accept_booking
+    post 'bookings/:id/decline', to: 'bookings#decline', as: :decline_booking
+    resources :drones
+  end
 end
