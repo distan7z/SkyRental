@@ -1,0 +1,8 @@
+<h3>My drones</h3>
+<ul>
+  <% current_user.drones.each do |drone| %>
+    <li><%= drone.brand %></li>
+    <li><%= drone.model %></li>
+    <li>--------------</li>
+  <% end %>
+</ul>
