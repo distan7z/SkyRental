@@ -1,8 +1,19 @@
 <h3>My drones</h3>
-<ul>
-  <% current_user.drones.each do |drone| %>
-    <li><%= drone.brand %></li>
-    <li><%= drone.model %></li>
-    <li>--------------</li>
-  <% end %>
-</ul>
+<div class="container">
+  <div class="row d-flex justify-content-around">
+    <% current_user.drones.each do |drone| %>
+   <div class="col-lg-4">
+      <div class="card-product">
+        <%# <a href="<%= admin_drone_path(drone) %>"> %>
+        <%= image_tag "drone.png", alt: "drone", class: "drone"%>
+        </a>
+          <div class="card-product-infos">
+            <h2><%= drone.brand %></h2>
+            <h3><%= drone.model %></h3>
+          </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+ </div>
+</div>
