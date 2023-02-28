@@ -1,1 +1,19 @@
 <h1>All our available drones</h1>
+<div class="container">
+  <div class="row d-flex justify-content-around">
+    <% @drones.each do |drone| %>
+   <div class="col-lg-4">
+      <div class="card-product">
+        <a href="<%= drone_path(drone) %>">
+        <%= image_tag "drone.png", alt: "drone", class: "drone"%>
+        </a>
+          <div class="card-product-infos">
+            <h2><%= drone.brand %></h2>
+            <h3><%= drone.model %></h3>
+          </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+ </div>
+</div>
