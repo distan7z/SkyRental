@@ -2,6 +2,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  margin-bottom: 15px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -10,10 +11,23 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 90px;
-
+  height: 100px;
 }
 
 #navbarDropdown {
   width: 40px;
   border-radius: 50%;
+}
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #670BFF;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: #4D04C4;
+  color: white;
 }

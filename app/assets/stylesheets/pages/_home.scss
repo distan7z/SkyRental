@@ -6,12 +6,20 @@
   box-shadow: 0 10px 30px rgba(0,0,0,.1);
   display: flex;
   justify-content: space-between;
-  margin: 10px;
+  margin: 15px;
+  flex-wrap: wrap;
+  transform: translate(2%, 2%);
+  transition: transform 0.2s;
 }
 
+.card-product:hover{
+  transform: translate(0, 0);
+}
+
+
 .card-product img {
-  height: 100%;
-  width: 120px;
+  height: 200px;
+  width: 100%;
   object-fit: cover;
 }
 
