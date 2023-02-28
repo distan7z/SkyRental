@@ -186,7 +186,7 @@ def new_drones
     i = rand(0..DRONE_BRANDS_MODELS.length-1)
     drone = Drone.new(
       brand: DRONE_BRANDS_MODELS[i][:brand],
-      model: DRONE_BRANDS_MODELS[i][:model],
+      model: DRONE_BRANDS_MODELS[i][:models].sample,
       description: DRONE_ANONYMOUS_DESCRIPTIONS.sample,
       user: User.all.sample
     )
