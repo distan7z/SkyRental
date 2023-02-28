@@ -1,5 +1,11 @@
 <%= simple_form_for @drone %>
-  <%= f.input :brand %>
-  <%= f.input :model %>
+  <%= f.input :brand,
+        required: true,
+        autofocus: true,
+        hint: "Brand" %>
+  <%= f.input :model,
+        required: true,
+        autofocus: true,
+        hint: "Model" %>
   <%= f.button :submit %>
 <% end %>
