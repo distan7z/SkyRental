@@ -138,6 +138,8 @@ DRONE_BRANDS_MODELS = [
   }
 ]
 
+DRONE_DESCRIPTIONS = Faker::Lorem.paragraph
+
 
 
 def new_users
@@ -157,6 +159,7 @@ def new_drones
     drone = Drone.new(
       brand: DRONE_BRANDS_MODELS.sample[:brand],
       model: DRONE_BRANDS_MODELS.sample[:models].sample,
+      description: DRONE_DESCRIPTIONS,
       user: User.all.sample
     )
     drone.save!
@@ -183,14 +186,3 @@ puts "Creation of bookings"
 new_bookings
 
 puts "Seed done !"
-
-
-# {
-#   "brand": "DJI",
-#   "models": [
-#     "DJI Mavic Mini",
-#     "DJI Mavic Air 2",
-#     "DJI Phantom 4 Pro",
-#     "DJI Inspire 2"
-#   ]
-# },
