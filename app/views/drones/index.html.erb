@@ -4,13 +4,15 @@
     <% @drones.each do |drone| %>
    <div class="col-lg-4">
       <div class="card-product">
-        <%= image_tag "drone.png", alt: "drone", class: "drone" %>
+        <a href="<%= drone_path(drone) %>">
+        <%= image_tag "drone.png", alt: "drone", class: "drone"%>
+        </a>
           <div class="card-product-infos">
             <h2><%= drone.brand %></h2>
             <h3><%= drone.model %></h3>
-            <%= link_to "Book now", "#", class: "btn btn-flat" %>
           </div>
       </div>
+    </div>
     <% end %>
   </div>
  </div>
