@@ -1,1 +1,17 @@
 <h1>All our available drones</h1>
+<div class="container">
+  <div class="row d-flex justify-content-around">
+    <% @drones.each do |drone| %>
+   <div class="col-lg-4">
+      <div class="card-product">
+        <%= image_tag "drone.png", alt: "drone", class: "drone" %>
+          <div class="card-product-infos">
+            <h2><%= drone.brand %></h2>
+            <h3><%= drone.model %></h3>
+            <%= link_to "Book now", "#", class: "btn btn-flat" %>
+          </div>
+      </div>
+    <% end %>
+  </div>
+ </div>
+</div>
