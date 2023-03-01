@@ -3,28 +3,32 @@
   background-size: cover;
   background-position: center;
   padding: 150px 0;
+
+  h1 {
+    margin: 0;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 20px;
+    color: white;
+    opacity: .7;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
 }
 
-.banner h1 {
-  margin: 0;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
-  font-weight: bold;
-}
-
-.banner p {
-  font-size: 20px;
-  color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-}
-
-#container{
+.banner-text{
   background: white;
   padding: 30px;
   border-radius: 4px;
   box-shadow: 0 10px 30px rgba(0,0,0,.1);
+}
+
+.banner-container{
+  padding: 30px;
 }
 
 .btn-ghost {
@@ -33,11 +37,11 @@
   border-radius: 4px;
   background: #670BFF;
   transition: background 0.3s ease;
-}
 
-.btn-ghost:hover {
-  background: #4D04C4;
-  color: white;
+  :hover {
+    background: #4D04C4;
+    color: white;
+  }
 }
 
 a {
