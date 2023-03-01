@@ -6,14 +6,14 @@ class Admin::DronesController < ApplicationController
   end
 
   def show
-    authorize @drone
     @booking = Booking.new
     @is_booked = booked?
+    authorize @drone
   end
 
   def new
-    authorize @drone
     @drone = Drone.new
+    authorize @drone
   end
 
   def edit
