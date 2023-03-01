@@ -1,4 +1,3 @@
-
 <div class="container">
 
   <div>
@@ -17,7 +16,7 @@
     <% if @drone.photo.attached? %>
       <%= cl_image_tag @drone.photo.key, width: 600 %>
     <% else %>
-      <%= cl_image_tag "drone_default.jpg", width: 600 %>
+      <img src="https://res.cloudinary.com/ds4tpkzth/image/upload/v1677677551/default_drone.png" alt="default_drone">
     <% end %>
   </div>
 
@@ -30,5 +29,4 @@
   <div class="pricing py-3">
     <p>90€ par jour</p>
   </div>
-
 </div>
