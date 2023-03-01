@@ -1,10 +1,34 @@
-<div class="card-trip">
-  <%= image_tag "drone.png", alt: "Drone", width: 200 %>
-  <div class="card-trip-infos">
-    <div>
-      <h2><%= @drone.brand %> - <%= @drone.model %> </h2>
-      <p> <%= @drone.description %> </p>
-    <h2 class="card-trip-pricing">99.99€</h2>
-    </div>
+
+<div class="container">
+
+  <div>
+    <h2><%= @drone.model %> </h2>
   </div>
+
+  <div class="renting-infos">
+    <% if @is_booked %>
+      <p>This drone is currently booked.</p>
+    <% else %>
+      <p>This drone is currently available for booking.</p>
+    <% end %>
+  </div>
+
+  <div class="">
+    <% if @drone.photo.attached? %>
+      <%= cl_image_tag @drone.photo.key, width: 600 %>
+    <% else %>
+      <%= cl_image_tag "drone_default.jpg", width: 600 %>
+    <% end %>
+  </div>
+
+  <div class="mx-6">
+    <h2 class="py-3">Description</h2>
+    <p><%= @drone.brand %> - <%= @drone.model %></p>
+    <p> <%= @drone.description %> </p>
+  </div>
+
+  <div class="pricing py-3">
+    <p>90€ par jour</p>
+  </div>
+
 </div>
