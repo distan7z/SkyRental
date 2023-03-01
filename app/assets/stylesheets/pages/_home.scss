@@ -27,6 +27,18 @@
   box-shadow: 0 10px 30px rgba(0,0,0,.1);
 }
 
+.btn-ghost {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #670BFF;
+  transition: background 0.3s ease;
+}
+
+.btn-ghost:hover {
+  background: #4D04C4;
+  color: white;
+}
 
 a {
   text-decoration: none;
