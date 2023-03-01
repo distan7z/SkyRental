@@ -1,0 +1,7 @@
+<h2>Book a new drone</h2>
+
+<%= simple_form_for @booking do |f| %>
+  <%= f.input :booking_start, html5: true %>
+  <%= f.input :booking_end, html5: true %>
+  <%= f.button :submit %>
+<% end %>
