@@ -7,5 +7,10 @@
         required: true,
         autofocus: true,
         hint: "Model" %>
+  <%= f.input :description,
+        required: true,
+        autofocus: true,
+        hint: "Description" %>
+  <%= f.input :photo, as: :file %>
   <%= f.button :submit %>
 <% end %>
