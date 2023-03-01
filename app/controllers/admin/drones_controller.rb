@@ -44,6 +44,6 @@ class Admin::DronesController < ApplicationController
     end
 
     def drone_params
-      params.require(:drone).permit(:brand, :model)
+      params.require(:drone).permit(:brand, :model, :photo, :description)
     end
 end
