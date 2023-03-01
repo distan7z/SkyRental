@@ -12,8 +12,8 @@ class Admin::DronesController < ApplicationController
   end
 
   def new
-    authorize @drone
     @drone = Drone.new
+    authorize @drone
   end
 
   def edit
