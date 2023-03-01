@@ -1,14 +1,14 @@
-<h3>My drones</h3>
+<h3>Your drones on rent</h3>
 <div class="container">
   <div class="row d-flex justify-content-around">
     <% current_user.drones.each do |drone| %>
    <div class="col-lg-4">
       <div class="card-product">
-        <%= link_to(drone_path(drone)) do %>
+        <%= link_to(admin_drone_path(drone)) do %>
           <% if drone.photo.attached? %>
             <%= cl_image_tag drone.photo.key, height: 300, width: 400 %>
           <% else %>
-            <%= cl_image_tag "drone_default.jpg", height: 300, width: 400 %>
+            <img src="https://res.cloudinary.com/ds4tpkzth/image/upload/v1677677551/default_drone.png" alt="default_drone">
           <% end %>
         <% end %>
         </a>

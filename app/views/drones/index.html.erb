@@ -4,9 +4,13 @@
     <% @drones.each do |drone| %>
    <div class="col-lg-4">
       <div class="card-product">
-        <a href="<%= drone_path(drone) %>">
-        <%= image_tag "https://res.cloudinary.com/ds4tpkzth/image/upload/v1677671124/drone_onmsio.jpg", alt: "drone"%>
-        </a>
+        <%= link_to(drone_path(drone)) do %>
+          <% if drone.photo.attached? %>
+            <%= cl_image_tag drone.photo.key, height: 300, width: 400 %>
+          <% else %>
+            <img src="https://res.cloudinary.com/ds4tpkzth/image/upload/v1677677551/default_drone.png" alt="default_drone">
+          <% end %>
+        <% end %>
           <div class="card-product-infos">
             <h2><%= drone.brand %></h2>
             <h3><%= drone.model %></h3>

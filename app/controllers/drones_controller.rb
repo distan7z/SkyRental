@@ -46,7 +46,12 @@ class DronesController < ApplicationController
     authorize @drone
   end
 
+
   private
+
+  def booked?
+    @drone.bookings.exists?(['booking_start < ? AND booking_end > ?', Time.now, Time.now])
+  end
 
   def set_drone
     @drone = Drone.find(params[:id])
