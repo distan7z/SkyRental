@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema[7.0].define(version: 2023_03_01_095212) do
-
+ActiveRecord::Schema[7.0].define(version: 2023_03_02_093836) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -62,6 +60,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_01_095212) do
     t.string "model"
     t.bigint "user_id", null: false
     t.text "description"
+    t.float "price"
     t.index ["user_id"], name: "index_drones_on_user_id"
   end
 

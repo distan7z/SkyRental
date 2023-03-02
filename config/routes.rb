@@ -2,10 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :drones, only: [:index, :show] do
-    resources :bookings, only: [:new, :create]
+    resources :bookings, only: [:new, :create] #to be deleted?
   end
 
-  resources :bookings, only: [:index, :show, :destroy]
+  resources :bookings, only: [:index, :create, :show, :destroy]
   namespace :admin do
     resources :bookings, only: [:index, :show]
     post 'bookings/:id/accept', to: 'bookings#accept', as: :accept_booking

@@ -8,7 +8,7 @@ class DronesController < ApplicationController
 
   def show
     authorize @drone
-    @booking = Booking.new
+    @new_booking = Booking.new
   end
 
   def new
@@ -59,6 +59,6 @@ class DronesController < ApplicationController
   end
 
   def drone_params
-    params.require(:drone).permit(:brand, :model)
+    params.require(:drone).permit(:brand, :model, :price)
   end
 end
