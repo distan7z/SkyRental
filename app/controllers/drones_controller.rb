@@ -3,7 +3,12 @@ class DronesController < ApplicationController
   before_action :set_drone, only: [:show, :edit, :update, :destroy]
 
   def index
-    @drones = policy_scope(Drone)
+    # @drones = policy_scope(Drone)
+    if params[:query].present?
+      @drones = Drone.search_by_brand_and_model(params[:query])
+    else
+      @drones = Drone.all
+    end
   end
 
   def show

@@ -24,9 +24,9 @@
     <h2 class="py-3">Description</h2>
     <p><%= @drone.brand %> - <%= @drone.model %></p>
     <p> <%= @drone.description %> </p>
-      <div class="pricing py-3">
-        <p>90€ par jour</p>
-      </div>
+        <div class="pricing py-3">
+          <p><%= @drone.price %> € / per day</p>
+        </div>
   </div>
 
   <div>
@@ -41,5 +41,4 @@
   <div class="pricing py-3">
    <p><%= @drone.price %> €</p>
   </div>
-
 </div>
