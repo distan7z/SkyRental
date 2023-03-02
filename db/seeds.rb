@@ -188,7 +188,8 @@ def new_drones
       brand: DRONE_BRANDS_MODELS[i][:brand],
       model: DRONE_BRANDS_MODELS[i][:models].sample,
       description: DRONE_ANONYMOUS_DESCRIPTIONS.sample,
-      user: User.all.sample
+      user: User.all.sample,
+      price: rand(25..70)
     )
     drone.save!
   end
