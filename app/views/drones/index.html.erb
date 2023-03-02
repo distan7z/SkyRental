@@ -1,5 +1,15 @@
 <h1>All our available drones</h1>
 <div class="container">
+
+  <%= form_with url: drones_path, method: :get, class: "d-flex" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a drone"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+
   <div class="row d-flex justify-content-around">
     <% @drones.each do |drone| %>
    <div class="col-lg-4">
