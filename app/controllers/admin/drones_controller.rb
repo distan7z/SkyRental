@@ -6,10 +6,14 @@ class Admin::DronesController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
+    @is_booked = booked?
+    authorize @drone
   end
 
   def new
     @drone = Drone.new
+    authorize @drone
   end
 
   def edit
@@ -18,6 +22,7 @@ class Admin::DronesController < ApplicationController
   def create
     @drone = Drone.new(drone_params)
     @drone.user = current_user
+    authorize @drone
     if @drone.save
       redirect_to admin_drones_path, notice: 'Drone was successfully created.'
     else
@@ -36,14 +41,20 @@ class Admin::DronesController < ApplicationController
   def destroy
     @drone.destroy
     redirect_to admin_drones_url, notice: 'Drone was successfully destroyed.'
+    authorize @drone
   end
 
   private
-    def set_drone
-      @drone = Drone.find(params[:id])
-    end
 
-    def drone_params
-      params.require(:drone).permit(:brand, :model)
-    end
+  def booked?
+    @drone.bookings.exists?(['booking_start < ? AND booking_end > ?', Time.now, Time.now])
+  end
+
+  def set_drone
+    @drone = Drone.find(params[:id])
+  end
+
+  def drone_params
+    params.require(:drone).permit(:brand, :model, :photo, :description)
+  end
 end

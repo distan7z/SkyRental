@@ -1,42 +1,53 @@
 // Specific CSS for your home-page
-.card-product {
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+
+  h1 {
+    margin: 0;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 20px;
+    color: white;
+    opacity: .7;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+}
+
+.banner-text{
   background: white;
   padding: 30px;
   border-radius: 4px;
   box-shadow: 0 10px 30px rgba(0,0,0,.1);
-  display: flex;
-  justify-content: space-between;
-  margin: 15px;
-  flex-wrap: wrap;
-  transform: translate(2%, 2%);
-  transition: transform 0.2s;
 }
 
-.card-product:hover{
-  transform: translate(0, 0);
-}
-
-
-.card-product img {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
-}
-
-.card-product h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.card-product p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-
-.card-product .card-product-infos {
+.banner-container{
   padding: 30px;
+}
+
+.btn-ghost {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #670BFF;
+  transition: background 0.3s ease;
+
+  :hover {
+    background: #4D04C4;
+    color: white;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.text-center {
+  text-align: center;
 }
