@@ -10,7 +10,7 @@
     <%= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
 
-  <div class="row d-flex justify-content-around">
+  <div class="row d-flex ">
     <% @drones.each do |drone| %>
    <div class="col-lg-4">
       <div class="card-product">
@@ -22,7 +22,7 @@
           <% end %>
         <% end %>
           <div class="card-product-infos">
-            <h2><%= drone.brand %></h2>
+            <strong><h2><%= drone.brand %></h2> </strong>
             <h3><%= drone.model %></h3>
             <h6>Starting at : <%= drone.price %> €</h6>
           </div>
