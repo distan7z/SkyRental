@@ -1,6 +1,6 @@
 <h2>Your bookings</h2>
 <div>
-  <%= current_user.bookings.each do |booking| %>
+  <% current_user.bookings.each do |booking| %>
     <%= booking %> <br/>
     <%= booking.booking_start %> <br/>
     <%= booking.booking_end %>
