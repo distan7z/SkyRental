@@ -9,7 +9,9 @@
     </div>
   </div>
 
-  <p>Si le propriétaire accepte, vous pourrez profiter de l'appareil du <%= @booking.booking_start %> au <%= @booking.booking_end %></p>
+  <p>Si le propriétaire accepte, vous pourrez profiter de l'appareil du
+  <%= @booking.booking_start.to_fs(:long_ordinal) %> au
+  <%= @booking.booking_end.to_fs(:long_ordinal) %></p>
 
 
   <p>Drone owner: <%= User.find(user_drone.user_id).first_name %> <%= User.find(user_drone.user_id).last_name  %></p>
