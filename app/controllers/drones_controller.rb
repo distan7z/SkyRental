@@ -7,7 +7,7 @@ class DronesController < ApplicationController
 
   def show
     authorize @drone
-    @booking = Booking.new
+    @new_booking = Booking.new
   end
 
   def new

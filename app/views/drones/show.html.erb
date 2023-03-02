@@ -24,9 +24,16 @@
     <h2 class="py-3">Description</h2>
     <p><%= @drone.brand %> - <%= @drone.model %></p>
     <p> <%= @drone.description %> </p>
+      <div class="pricing py-3">
+        <p>90€ par jour</p>
+      </div>
   </div>
 
-  <div class="pricing py-3">
-    <p>90€ par jour</p>
+  <div>
+    <%= simple_form_for @new_booking do |f| %>
+      <%= f.input :booking_start, html5: true %>
+      <%= f.input :booking_end, html5: true %>
+      <%= f.button :submit, 'Book this drone', class:"btn btn-primary" %>
+    <% end %>
   </div>
 </div>
