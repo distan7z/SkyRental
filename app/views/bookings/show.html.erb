@@ -1,6 +1,19 @@
-<h2>Your booking</h2>
+<% user_drone = Drone.find(@booking.drone_id) %>
+
+<h2>La réservation de votre drone a bien été envoyée au propriétaire</h2>
 <div>
-  <%= @booking %> <br/>
-  <%= @booking.booking_start %> <br/>
-  <%= @booking.booking_end %>
+  <div>
+    <div class="d-inline-block">
+      <h3>Modèle: </h3>
+      <strong><p><%= user_drone.model %></p></strong>
+    </div>
+  </div>
+
+  <p>Si le propriétaire accepte, vous pourrez profiter de l'appareil du <%= @booking.booking_start %> au <%= @booking.booking_end %></p>
+
+
+  <p>Drone owner: <%= User.find(user_drone.user_id).first_name %> <%= User.find(user_drone.user_id).last_name  %></p>
+  <p>Drone owner ID:<%= user_drone.user_id %></p>
+
+  <p>Votre client ID: <%= @booking.user_id %></p>
 </div>
