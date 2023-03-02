@@ -31,8 +31,8 @@
 
   <div>
     <%= simple_form_for @new_booking do |f| %>
-      <%= f.input :booking_start, html5: true %>
-      <%= f.input :booking_end, html5: true %>
+      <%= f.input :booking_start, as: :date, html5: true %>
+      <%= f.input :booking_end, as: :date, html5: true %>
       <%= f.button :submit, 'Book this drone', class:"btn btn-primary" %>
     <% end %>
   </div>
