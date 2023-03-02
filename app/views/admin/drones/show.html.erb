@@ -32,4 +32,13 @@
     <p>90€ par jour</p>
   </div>
 
+  <div>
+  <%= month_calendar(events: @bookings) do |date, bookings| %>
+    <%= date %>
+    <% bookings.each do |booking| %>
+      <%= booking.start %>
+    <% end %>
+  <% end %>
+  </div>
+
 </div>

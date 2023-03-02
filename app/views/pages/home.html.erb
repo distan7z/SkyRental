@@ -1,10 +1,26 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/ds4tpkzth/image/upload/v1677684241/alessio-soggetti-rSFxBGpnluw-unsplash_vc525j.jpg);">
-  <div class="banner-container">
-    <h1>Sky Rental brings <strong>drones</strong> to <strong>everyone </strong>!</h1>
-    <p>Change your life and book one of our drones around the world.</p>
-    <%= link_to "Book now", drones_path, class: "btn btn-ghost" %>
+  <div class="card-category">
+    <h2>Rent A Drone</h2>
+    <p>Find the best drone for your next adventure</p>
+    <div>
+      <%= link_to "Browse Drones", drones_path, class: "btn btn-dark" %>
+    </div>
   </div>
-</div>
+  <div class="card-category">
+    <% if current_user && current_user.drones != [] %>
+      <h2>Manage my bookings</h2>
+      <p></p>
+      <div>
+        <%= link_to "My Bookings", new_admin_drone_path, class: "btn btn-dark" %>
+    </div>
+    <% else %>
+      <h2>Rent my drone</h2>
+      <p></p>
+      <div>
+      <%= link_to "Add a drone", new_admin_drone_path, class: "btn btn-dark" %>
+      </div>
+    <% end %>
+  </div>
 
 
 <div class="banner-text">
