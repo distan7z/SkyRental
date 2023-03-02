@@ -1,7 +1,7 @@
 <div class="container">
 
   <div>
-    <h2><%= @drone.brand %> - <%= @drone.model %> </h2>
+    <h2><%= @drone.model %> </h2>
   </div>
 
   <div class="renting-infos">
@@ -20,8 +20,7 @@
     <% end %>
   </div>
 
-  <%= link_to "Edit ✎", edit_admin_drone_path, class: 'btn btn-primary' %>
-  <%= link_to "Delete this Drone", admin_drone_path(@drone), class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this drone ?" } %>
+  <button type="button" class="btn btn-info">✎ Edit</button>
 
   <div class="mx-6">
     <h2 class="py-3">Description</h2>
@@ -30,7 +29,16 @@
   </div>
 
   <div class="pricing py-3">
-    <p><%= @drone.price %> €</p>
+    <p>90€ par jour</p>
+  </div>
+
+  <div>
+  <%= month_calendar(events: @bookings) do |date, bookings| %>
+    <%= date %>
+    <% bookings.each do |booking| %>
+      <%= booking.start %>
+    <% end %>
+  <% end %>
   </div>
 
 </div>

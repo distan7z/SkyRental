@@ -1,39 +1,28 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/ds4tpkzth/image/upload/v1677684241/alessio-soggetti-rSFxBGpnluw-unsplash_vc525j.jpg);">
-  <div class="banner-container">
-    <h1>Sky Rental brings <strong>drones</strong> to <strong>everyone </strong>!</h1>
-    <p>Change your life and book one of our drones around the world.</p>
-    <%= link_to "Book now", drones_path, class: "btn btn-ghost" %>
-  </div>
-</div>
-
-
-<div class="banner-text">
-  <p>Welcome to our drone renting website! We are excited to have you here and to introduce you to the wonderful world of drone technology.
-
-Our drones are equipped with the latest technology and are easy to operate, even if you are a beginner. Browse our selection of drones today and take your adventure to new heights!</p>
-</div>
-
-<div class="container">
-    <h2 class="text-center">How it works</h2>
-    <div class="cards">
-
+<div class="container" style="background-image: linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)), url(https://res.cloudinary.com/ds4tpkzth/image/upload/v1677771086/billy-huynh-v9bnfMCyKbg-unsplash_uoqbez.jpg);">
+  <div class="row">
+    <div class="col-6">
       <div class="card">
-        <img src="https://res.cloudinary.com/ds4tpkzth/image/upload/v1677667606/david-henrichs-72AYEEBJpz4-unsplash_y1aati.jpg" alt="">
-        <h4>Choose a Drone</h4>
-        <p>First choose one of our drones around the world.</p>
+        <h2>Find a drone to rent</h2>
+        <p>Find the drone you need for your next project</p>
+        <%= link_to "Find a drone", drones_path, class: "btn btn-primary" %>
       </div>
-
       <div class="card">
-        <img src="https://res.cloudinary.com/ds4tpkzth/image/upload/v1677676748/development/oc62t0alur9zba4q8a2y1lpwdqxd.jpg" alt="">
-        <h4>Book a drone</h4>
-        <p>Send an invits to the drone's owner!</p>
+        <% if current_user && current_user.drone != [] %>
+          <h2>Manage your drones</h2>
+          <p>Manage your drones and see your bookings</p>
+          <%= link_to "Manage your drones", admin_drones_path, class: "btn btn-primary" %>
+        <% else %>
+          <h2>Offer your drone for rent</h2>
+          <p>Offer your drone for rent and start earning money!</p>
+          <%= link_to "Offer your drone", new_admin_drone_path, class: "btn btn-primary" %>
+        <% end %>
       </div>
-
-      <div class="card">
-        <img src="https://res.cloudinary.com/ds4tpkzth/image/upload/v1677667606/karl-greif-H5IXIH254AU-unsplash_ob9odk.jpg" alt="">
-        <h4>Enjoy !</h4>
-        <p>Finally you will be able to fly.</p>
-      </div>
-
     </div>
   </div>
+  <div>
+    <h2>How it works</h2>
+    <p>Find the drone you need for your next project</p>
+    <p>Welcome to our drone renting website! We are excited to have you here and to introduce you to the wonderful world of drone technology.</p>
+    <p>Our drones are equipped with the latest technology and are easy to operate, even if you are a beginner. Browse our selection of drones today and take your adventure to new heights!</p>
+  </div>
+</div>

@@ -7,6 +7,7 @@ class Admin::DronesController < ApplicationController
 
   def show
     @booking = Booking.new
+    @bookings = Drone.find(params[:id]).bookings
     @is_booked = booked?
     authorize @drone
   end
