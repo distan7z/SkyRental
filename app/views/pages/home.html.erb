@@ -1,26 +1,29 @@
 <div class="container">
   <div class="row">
-    <div class="col-6">
+    <div class="col-6 d-flex justify-content-center align-items-center">
       <div class="card h-100">
         <h2>Trouver le drone adapté a vos besoins avec SkyRental</h2>
         <p>Locations de drones a Bordeaux, France</p>
         <%= link_to "Tous les drones", drones_path, class: "btn btn-primary" %>
       </div>
     </div>
-    <div class="col-6">
+    <div class="col-6 d-flex justify-content-center align-items-center">
       <div class="card h-100">
         <% if current_user && current_user.drones != [] %>
-          <h2>Mes drones</h2>
-          <p>Acceder a mes drones et consulter mes demandes de location</p>
-          <%= link_to "Mes drones", admin_drones_path, class: "btn btn-primary" %>
+            <h2>Mes drones</h2>
+            <p>Acceder a mes drones et consulter mes demandes de location</p>
+            <%= link_to "Mes drones", admin_drones_path, class: "btn btn-primary" %>
+
         <% else %>
-          <h2>Ajouter un drone</h2>
-          <p>Commencer a gagner de l'argent en ajoutant mon drone</p>
-          <%= link_to "Ajouter un drone", new_admin_drone_path, class: "btn btn-primary" %>
+            <h2>Ajouter un drone</h2>
+            <p>Commencer a gagner de l'argent en ajoutant mon drone</p>
+            <%= link_to "Ajouter un drone", new_admin_drone_path, class: "btn btn-primary" %>
+
         <% end %>
       </div>
     </div>
   </div>
+  <br>
   <br>
   <div>
     <h3>Comment ça fonctionne?</h3>
