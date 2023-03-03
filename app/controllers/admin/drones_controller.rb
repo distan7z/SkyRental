@@ -1,6 +1,7 @@
 class Admin::DronesController < ApplicationController
 
   def show
+    @drone = Drone.find(params[:id])
     @booking = Booking.new
     @bookings = Drone.find(params[:id]).bookings
     @is_booked = booked?

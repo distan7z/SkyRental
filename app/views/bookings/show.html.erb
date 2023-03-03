@@ -1,26 +1,25 @@
 <% user_drone = Drone.find(@booking.drone_id) %>
-
-<div class="row d-flex justify-content-center">
-  <h2 >La réservation de votre drone a bien été envoyée au propriétaire</h2>
-  <div class = "card">
-    <div>
-      <div class="d-inline-block">
-        <h3>Modèle: </h3>
-        <strong><p><%= user_drone.model %></p></strong>
+  <% if user_drone.user_id == current_user %> %>
+    <div class="row d-flex justify-content-center">
+      <h2 >La réservation de votre drone a bien été envoyée au propriétaire</h2>
+      <div class = "card">
+        <div>
+          <div class="d-inline-block">
+            <h3>Modèle: </h3>
+            <strong><p><%= user_drone.model %></p></strong>
+          </div>
+        </div>
+        <p>Si le propriétaire accepte, vous pourrez profiter de l'appareil du :
+        <br>
+        <br>
+          - <%= @booking.booking_start.to_fs(:long_ordinal) %> au
+        <br>
+          - <%= @booking.booking_end.to_fs(:long_ordinal) %></p>
+        <p>Drone owner: <%= User.find(user_drone.user_id).first_name %> <%= User.find(user_drone.user_id).last_name  %></p>
+        <p>Drone owner ID:<%= user_drone.user_id %></p>
+        <p>Votre client ID: <%= @booking.user_id %></p>
       </div>
     </div>
-
-    <p>Si le propriétaire accepte, vous pourrez profiter de l'appareil du :
-    <br>
-    <br>
-    - <%= @booking.booking_start.to_fs(:long_ordinal) %> au
-    <br>
-    - <%= @booking.booking_end.to_fs(:long_ordinal) %></p>
-
-
-    <p>Drone owner: <%= User.find(user_drone.user_id).first_name %> <%= User.find(user_drone.user_id).last_name  %></p>
-    <p>Drone owner ID:<%= user_drone.user_id %></p>
-
-    <p>Votre client ID: <%= @booking.user_id %></p>
-  </div>
-</div>
+  <% else %>
+  <p>propriétaire</p>
+<% end %>
