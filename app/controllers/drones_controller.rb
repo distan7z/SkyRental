@@ -1,28 +1,23 @@
 class DronesController < ApplicationController
-  before_action :set_drone, only: [:show, :edit, :update, :destroy]
 
   def index
     @drones = policy_scope(Drone)
   end
 
   def show
-    authorize @drone
     @new_booking = Booking.new
   end
 
   def new
-    authorize @drone
     @drone = Drone.new
   end
 
   def edit
-    authorize @drone
   end
 
   def create
     @drone = Drone.new(drone_params)
     @drone.user = current_user
-    authorize @drone
 
     if @drone.save
       redirect_to drone_path(@drone)
@@ -32,7 +27,6 @@ class DronesController < ApplicationController
   end
 
   def update
-    authorize @drone
     if @drone.update(drone_params)
       redirect_to drone_path(@drone)
     else
@@ -43,7 +37,6 @@ class DronesController < ApplicationController
   def destroy
     @drone.destroy
     redirect_to drones_path
-    authorize @drone
   end
 
 
