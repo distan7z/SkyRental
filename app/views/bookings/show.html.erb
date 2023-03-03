@@ -17,9 +17,19 @@
           - <%= @booking.booking_end.to_fs(:long_ordinal) %></p>
         <p>Drone owner: <%= User.find(user_drone.user_id).first_name %> <%= User.find(user_drone.user_id).last_name  %></p>
         <p>Drone owner ID:<%= user_drone.user_id %></p>
-        <p>Votre client ID: <%= @booking.user_id %></p>
+        <p>Votre ID: <%= @booking.user_id %></p>
       </div>
     </div>
   <% else %>
-  <p>propriétaire</p>
+    <div class="row d-flex justify-content-center">
+      <h2>Vous avez une nouvelle demande de réservation</h2>
+      <br>
+      <br>
+        - <%= @booking.booking_start.to_fs(:long_ordinal) %> au
+      <br>
+        - <%= @booking.booking_end.to_fs(:long_ordinal) %></p>
+        <p>La demande provient de <%= @booking.user_id %></p>
+        <p>Votre ID: <%= user_drone.user_id %></p>
+
+    </div>
 <% end %>
