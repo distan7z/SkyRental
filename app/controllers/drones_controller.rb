@@ -11,6 +11,7 @@ class DronesController < ApplicationController
 
   def show
     @new_booking = Booking.new
+    @drone = Drone.find(params[:id])
   end
 
   def new
