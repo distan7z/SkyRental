@@ -11,7 +11,7 @@
   <div class="row d-flex ">
     <% @drones.each do |drone| %>
    <div class="col-lg-4">
-      <div class="card-product">
+      <div class="card-product h-600
         <%= link_to(drone_path(drone)) do %>
           <% if drone.photo.attached? %>
             <%= cl_image_tag drone.photo.key, height: 300, width: 400 %>
