@@ -7,7 +7,7 @@
         <%= link_to "Find a drone", drones_path, class: "btn btn-primary" %>
       </div>
       <div class="card">
-        <% if current_user && current_user.drone != [] %>
+        <% if current_user && current_user.drones != [] %>
           <h2>Manage your drones</h2>
           <p>Manage your drones and see your bookings</p>
           <%= link_to "Manage your drones", admin_drones_path, class: "btn btn-primary" %>
