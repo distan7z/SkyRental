@@ -12,7 +12,7 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item">
-            <p>Bonjour, <strong><%= current_user.first_name %></strong>!</p>
+            <p>Bonjour, <strong><%= current_user.first_name %></strong> !</p>
             <%= link_to "Ajouter un drone", new_admin_drone_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">

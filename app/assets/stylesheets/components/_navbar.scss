@@ -11,7 +11,7 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 90px;
-  height: 100px;
+  height: 80px;
 }
 
 #navbarDropdown {
@@ -32,9 +32,11 @@
   color: white;
 }
 
-.p{
-  font-size: 20px;
-  color: #29b0ff;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+.nav-item {
+  strong {
+    font-size: 20px;
+    color: #29b0ff;
+    opacity: .7;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
 }
