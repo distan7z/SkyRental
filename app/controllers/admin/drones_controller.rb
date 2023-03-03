@@ -1,6 +1,5 @@
 class Admin::DronesController < ApplicationController
-
-  before_action: :set_drone, only: [:show, :edit, :update, :destroy]
+  before_action :set_drone, only: [:show, :edit, :update, :destroy]
 
   def show
     @booking = Booking.new
