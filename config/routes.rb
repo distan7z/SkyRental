@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users
   root to: 'pages#home'
   resources :drones, only: [:index, :show] do
     resources :bookings, only: [:new, :create] #to be deleted?
@@ -13,4 +12,7 @@ Rails.application.routes.draw do
     post 'bookings/:id/decline', to: 'bookings#decline', as: :decline_booking
     resources :drones
   end
+
+  devise_for :users
+  resources :users, only: [:show]
 end

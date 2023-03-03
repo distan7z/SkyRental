@@ -1,28 +1,41 @@
-<div class="container" style="background-image: linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)), url(https://res.cloudinary.com/ds4tpkzth/image/upload/v1677771086/billy-huynh-v9bnfMCyKbg-unsplash_uoqbez.jpg);">
+<div class="container">
   <div class="row">
     <div class="col-6">
-      <div class="card">
-        <h2>Find a drone to rent</h2>
-        <p>Find the drone you need for your next project</p>
-        <%= link_to "Find a drone", drones_path, class: "btn btn-primary" %>
+      <div class="card h-100">
+        <h2>Trouver le drone adapté a vos besoins avec SkyRental</h2>
+        <p>Locations de drones a Bordeaux, France</p>
+        <%= link_to "Tous les drones", drones_path, class: "btn btn-primary" %>
       </div>
-      <div class="card">
+    </div>
+    <div class="col-6">
+      <div class="card h-100">
         <% if current_user && current_user.drones != [] %>
-          <h2>Manage your drones</h2>
-          <p>Manage your drones and see your bookings</p>
-          <%= link_to "Manage your drones", admin_drones_path, class: "btn btn-primary" %>
+          <h2>Mes drones</h2>
+          <p>Acceder a mes drones et consulter mes demandes de location</p>
+          <%= link_to "Mes drones", admin_drones_path, class: "btn btn-primary" %>
         <% else %>
-          <h2>Offer your drone for rent</h2>
-          <p>Offer your drone for rent and start earning money!</p>
-          <%= link_to "Offer your drone", new_admin_drone_path, class: "btn btn-primary" %>
+          <h2>Ajouter un drone</h2>
+          <p>Commencer a gagner de l'argent en ajoutant mon drone</p>
+          <%= link_to "Ajouter un drone", new_admin_drone_path, class: "btn btn-primary" %>
         <% end %>
       </div>
     </div>
   </div>
+  <br>
   <div>
-    <h2>How it works</h2>
-    <p>Find the drone you need for your next project</p>
-    <p>Welcome to our drone renting website! We are excited to have you here and to introduce you to the wonderful world of drone technology.</p>
-    <p>Our drones are equipped with the latest technology and are easy to operate, even if you are a beginner. Browse our selection of drones today and take your adventure to new heights!</p>
+    <h3>Comment ça fonctionne?</h3>
+    <p>Vous avez un drone et vous souhaitez le louer? Vous avez besoin d'un drone pour une mission? SkyRental est la solution!</p>
+    <br>
+    <h4>Photographie aerienne</h4>
+    <p>capturer de superbes photographies et vidéos aériennes. Les drones équipés de caméras de haute qualité peuvent capturer des images et des vidéos époustouflantes depuis des perspectives uniques qui seraient impossibles à obtenir avec des méthodes de photographie traditionnelles.</p>
+    <br>
+    <h4>Analyses de terrain</h4>
+    <p>Les drones peuvent être utilisés pour effectuer des levés topographiques et cartographier de vastes zones rapidement et précisément. Ils peuvent capturer des images haute résolution qui peuvent être utilisées pour créer des cartes 3D détaillées, ce qui peut être utile dans une variété d'industries, telles que l'agriculture, la construction et l'exploitation minière.</p>
+    <br>
+    <h4>Inspections</h4>
+    <p> Les drones peuvent être utilisés pour inspecter des endroits difficiles d'accès tels que les toits, les lignes électriques et les éoliennes. Ils peuvent accéder rapidement et en toute sécurité à ces zones et capturer des images et des vidéos de haute qualité, qui peuvent être utilisées à des fins d'inspection et de maintenance.</p>
+    <br>
+    <h4>Loisirs</h4>
+    <p>Louer un drone peut être une expérience amusante et passionnante. Que vous vouliez piloter un drone pour la première fois ou tester un nouveau modèle, la location d'un drone peut fournir une expérience unique et excitante qui peut être appréciée avec des amis et de la famille.</p>
   </div>
 </div>

@@ -1,20 +1,14 @@
 class Admin::DronesController < ApplicationController
-  before_action :set_drone, only: [:show, :edit, :update, :destroy]
-
-  def index
-    @drones = policy_scope(Drone)
-  end
 
   def show
+    @drone = Drone.find(params[:id])
     @booking = Booking.new
     @bookings = Drone.find(params[:id]).bookings
     @is_booked = booked?
-    authorize @drone
   end
 
   def new
     @drone = Drone.new
-    authorize @drone
   end
 
   def edit
@@ -23,7 +17,6 @@ class Admin::DronesController < ApplicationController
   def create
     @drone = Drone.new(drone_params)
     @drone.user = current_user
-    authorize @drone
     if @drone.save
       redirect_to admin_drones_path, notice: 'Drone was successfully created.'
     else
@@ -42,7 +35,6 @@ class Admin::DronesController < ApplicationController
   def destroy
     @drone.destroy
     redirect_to admin_drones_url, notice: 'Drone was successfully destroyed.'
-    authorize @drone
   end
 
   private

@@ -1,5 +1,4 @@
 <div class="container">
-
   <div>
     <h2><%= @drone.model %> </h2>
   </div>
@@ -34,11 +33,10 @@
 
   <div>
   <%= month_calendar(events: @bookings) do |date, bookings| %>
-    <%= date %>
+    <%= date.day %>
     <% bookings.each do |booking| %>
-      <%= booking.start %>
+      <%= link_to booking.user_id, booking_path(booking) %>
     <% end %>
   <% end %>
   </div>
-
 </div>
