@@ -13,6 +13,6 @@ Rails.application.routes.draw do
     resources :drones
   end
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'users/registrations' }
   resources :users, only: [:show]
 end
