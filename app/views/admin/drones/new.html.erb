@@ -1,21 +1,23 @@
-<%= simple_form_for [:admin, @drone] do |f| %>
-  <%= f.input :brand,
-        required: true,
-        autofocus: true,
-        hint: "Brand" %>
-  <%= f.input :model,
-        required: true,
-        autofocus: true,
-        hint: "Model" %>
-  <%= f.input :price,
-        required: true,
-        autofocus: true,
-        hint: "Price" %>
-  <%= f.input :description,
-        required: true,
-        autofocus: true,
-        hint: "Description" %>
-  <%= f.input :photo, as: :file %>
-  <%= f.button :submit, class: 'btn btn-primary'%>
+<div class="container px-5">
+  <%= simple_form_for [:admin, @drone] do |f| %>
+    <%= f.input :brand,
+          required: true,
+          autofocus: true,
+          hint: "Brand" %>
+    <%= f.input :model,
+          required: true,
+          autofocus: true,
+          hint: "Model" %>
+    <%= f.input :price,
+          required: true,
+          autofocus: true,
+          hint: "Price" %>
+    <%= f.input :description,
+          required: true,
+          autofocus: true,
+          hint: "Description" %>
+    <%= f.input :photo, as: :file %>
+    <%= f.button :submit, class: 'btn btn-primary'%>
 
-<% end %>
+  <% end %>
+</div>

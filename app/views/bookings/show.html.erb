@@ -28,8 +28,8 @@
         - <%= @booking.booking_start.to_fs(:long_ordinal) %> au
       <br>
         - <%= @booking.booking_end.to_fs(:long_ordinal) %></p>
-        <p>La demande provient de <%= @booking.user_id %></p>
-        <p>Votre ID: <%= user_drone.user_id %></p>
+        <p>La demande provient de <%= User.find(@booking.user_id).first_name %></p>
+        <p>Votre ID: <%= User.find(user_drone.user_id).first_name %></p>
 
     </div>
 <% end %>

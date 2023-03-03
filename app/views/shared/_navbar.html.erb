@@ -12,7 +12,8 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to "Add Drone", new_admin_drone_path, class: "nav-link" %>
+            <p>Bonjour, <strong><%= current_user.first_name %></strong>!</p>
+            <%= link_to "Ajouter un drone", new_admin_drone_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
