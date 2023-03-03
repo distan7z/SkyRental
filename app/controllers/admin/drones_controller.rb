@@ -1,7 +1,8 @@
 class Admin::DronesController < ApplicationController
 
+  before_action: :set_drone, only: [:show, :edit, :update, :destroy]
+
   def show
-    @drone = Drone.find(params[:id])
     @booking = Booking.new
     @bookings = Drone.find(params[:id]).bookings
     @is_booked = booked?
@@ -11,8 +12,6 @@ class Admin::DronesController < ApplicationController
     @drone = Drone.new
   end
 
-  def edit
-  end
 
   def create
     @drone = Drone.new(drone_params)
@@ -22,6 +21,9 @@ class Admin::DronesController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def edit
   end
 
   def update
