@@ -14,6 +14,7 @@ class DronesController < ApplicationController
   def show
     authorize @drone
     @new_booking = Booking.new
+    @review = Review.new
   end
 
   def new
@@ -29,7 +30,6 @@ class DronesController < ApplicationController
     @drone = Drone.new(drone_params)
     @drone.user = current_user
     authorize @drone
-
     if @drone.save
       redirect_to drone_path(@drone)
     else
