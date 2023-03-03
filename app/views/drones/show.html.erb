@@ -36,9 +36,42 @@
       <%= f.hidden_field :drone_id, value: @drone.id %>
       <%= f.button :submit, 'Book this drone', class:"btn btn-primary" %>
     <% end %>
-   </div>
-
-  <div class="pricing py-3">
-   <p><%= @drone.price %> €</p>
   </div>
+
+  <br>
+
+  <hr class="solid">
+
+  <h1>Reviews of : <%= @drone.brand %> -  <small><%= @drone.model %></small></h1>
+
+  <br>
+
+  <h2><%= pluralize @drone.reviews.size, "review" %></h2>
+
+  <br>
+
+  <% if @drone.reviews.blank? %>
+    <p>Be the first to leave a review for <%= @drone.model %> </p>
+  <% else %>
+    <% @drone.reviews.each do |review| %>
+      <p><%= review.content %> - <%= review.rating %>/5</p>
+    <% end %>
+  <% end %>
+
+
+
+    <h2>Laissez une évaluation</h2>
+  <%= simple_form_for([@drone, @review])do |f| %>
+    <%= f.input :content %>
+    <%= f.input :rating, collection: Review::AUTHORIZED_RATINGS,
+                         include_blank: false %>
+    <%= f.submit class: "btn btn-primary", value: "Valider" %>
+  <% end %>
+
+
+
+  <br>
+
+  <%= link_to "< Back to all drones", drones_path %>
+
 </div>

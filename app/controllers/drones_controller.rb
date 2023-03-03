@@ -11,6 +11,7 @@ class DronesController < ApplicationController
 
   def show
     @new_booking = Booking.new
+    @review = Review.new
     @drone = Drone.find(params[:id])
   end
 
@@ -24,7 +25,7 @@ class DronesController < ApplicationController
   def create
     @drone = Drone.new(drone_params)
     @drone.user = current_user
-
+    authorize @drone
     if @drone.save
       redirect_to drone_path(@drone)
     else

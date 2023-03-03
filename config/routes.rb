@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :drones, only: [:index, :show] do
     resources :bookings, only: [:new, :create] #to be deleted?
+    resources :reviews, only: :create
   end
 
   resources :bookings, only: [:index, :create, :show, :destroy]
