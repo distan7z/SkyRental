@@ -7,7 +7,7 @@
 }
 
 .card p {
-  opacity: 20%;
+  opacity: 40%;
 }
 
 .card {
@@ -36,4 +36,19 @@
   .cards {
     justify-content: space-around;
   }
+}
+
+.card-product-infos h2{
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product-infos h6{
+  font-size: 14px;
+  margin: 2;
+}
+
+.justify-content-center{
+  justify-content: center;
 }

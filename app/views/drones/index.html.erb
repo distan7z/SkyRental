@@ -1,6 +1,16 @@
 <h1>All our available drones</h1>
 <div class="container">
-  <div class="row d-flex justify-content-around">
+
+  <%= form_with url: drones_path, method: :get, class: "d-flex" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a drone"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+
+  <div class="row d-flex ">
     <% @drones.each do |drone| %>
    <div class="col-lg-4">
       <div class="card-product">
@@ -12,8 +22,9 @@
           <% end %>
         <% end %>
           <div class="card-product-infos">
-            <h2><%= drone.brand %></h2>
+            <strong><h2><%= drone.brand %></h2> </strong>
             <h3><%= drone.model %></h3>
+            <h6>Starting at : <%= drone.price %> €</h6>
           </div>
       </div>
     </div>

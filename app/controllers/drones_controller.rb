@@ -1,7 +1,12 @@
 class DronesController < ApplicationController
 
   def index
-    @drones = policy_scope(Drone)
+    # @drones = policy_scope(Drone)
+    if params[:query].present?
+      @drones = Drone.search_by_brand_and_model(params[:query])
+    else
+      @drones = Drone.all
+    end
   end
 
   def show
