@@ -1,8 +1,8 @@
 class Admin::BookingsController < ApplicationController
-  before_action :authenticate_admin!
 
   def index
-    @bookings = Booking.all
+    @user_drones = Drone.where(user_id: current_user)
+    @bookings = @user_drones.flat_map {|user_drone| Booking.where(drone_id: user_drone.id) }
   end
 
   #accept?
@@ -13,9 +13,5 @@ class Admin::BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(:booking_start, :booking_end)
-  end
-
-  def authenticate_admin!
-    redirect_to root_path, alert: 'You are not authorized to access this page' unless current_user.admin?
   end
 end

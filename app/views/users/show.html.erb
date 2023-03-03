@@ -1,0 +1,32 @@
+<h1>Profile of <%= @user.first_name %> <%= @user.last_name %></h1>
+
+<h2 class="py-3">Bookings</h2>
+<% if @user.bookings.length < 1 %>
+  <div class="card">
+    <p>No bookings yet</p>
+  </div>
+<% else %>
+  <div>
+    <% @user.bookings.each do |booking| %>
+      <div class="card">
+        <p>Drone: <%= Drone.find(booking.drone_id).model %></p>
+        <p>Dates: <%= booking.booking_start %> to <%= booking.booking_start %></p>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+<h2 class="py-3">Drones on rents</h2>
+<% if @user.drones.length < 1 %>
+    <div class="card">
+      <p>No drones currentling in rent</p>
+    </div>
+<% else %>
+    <div>
+      <% @user.drones.each do |drones| %>
+        <div class="card">
+          <p>Drone: <%= drone.model %></p>
+        </div>
+      <% end %>
+    </div>
+<% end %>

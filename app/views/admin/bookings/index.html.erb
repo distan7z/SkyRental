@@ -1,0 +1,9 @@
+<h1>Your pending requests</h1>
+
+<div class="card">
+  <% @bookings.each do |booking| %>
+    <p>drone: <%= link_to Drone.find(booking.drone_id).model, Drone.find(booking.drone_id) %></p>
+    <p>booker: <%= link_to User.find(booking.user_id), User.find(booking.user_id) %></p>
+    <p><%= link_to "> Show details", booking %></p>
+  <% end %>
+</div>
